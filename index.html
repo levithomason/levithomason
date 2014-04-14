@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html class="no-js" ng-app="ltApp">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Levi Thomason</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet/less" href="less/lt-main.less">
+
+    <!-- Java Script -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular-animate.min.js"></script> 
+    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    <script src="js/vendor/less-1.6.1.min.js"></script>
+    <script src="js/controller.js"></script>
+
+    <!-- Google Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans:100,400,700' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body ng-controller="ltMainController" ng-init="ltInit()" ng-show="initialized">
+<!--[if lt IE 7]>
+<p class=chromeframe>Your browser is <em>ancient!</em>
+    <a href="http://browsehappy.com/">Upgrade to a different browser</a> or
+    <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.
+</p>
+<![endif]-->
+<div class="container" ng-class="menu.section">
+    <nav class="menu">
+        <div class="logo" ng-click="logo.clicked()">
+            <img class="image" ng-src="{{ logo.src }}" alt=""/>
+            <div class="text">
+                <div class="name">Levi Thomason</div>
+                <div class="title">Web Developer</div>
+            </div>
+        </div>
+        <div class="menu-item" ng-repeat="i in menu.items" ng-class="i.classes()">
+            <div class="text" ng-click="menu.setSection(i.key)">{{ i.name }}</div>
+        </div>
+    </nav>
+
+    <div class="main">
+        <div class="work page" ng-show="menu.isSection('work')">
+            <h1 class="page-title">My Work</h1>
+            <section>
+                <h2>SparrowBleu Photography</h2>
+                <a href="http://proofing.sparrowbleuphotography.com" target="_blank">
+                    <i class="fa fa-picture-o"></i> Proofing Gallery App
+                </a>
+
+                <h4>Services</h4>
+                <ul>
+                    <li>Full Web App</li>
+                    <li>Custom Design</li>
+                    <li>Mobile Site</li>
+                    <li>Cloud deployment</li>
+                    <li>Amazon S3 Storage</li>
+                    <li>Django</li>
+                    <li>Python</li>
+                    <li>Javascript</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Kai Morimoto Plastic Surgery</h2>
+                <div class="preview">
+                    <img src="img/kmp-preview.jpg" alt=""/>
+                </div>
+                <h4>Services</h4>
+                <ul>
+                    <li>Logo Design</li>
+                    <li>Full Web Design</li>
+                    <li>Custom Website</li>
+                    <li>Stock Imagery</li>
+                    <li>Less/CSS</li>
+                    <li>HTML</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Richards Law LLC</h2>
+                <div class="preview">
+                    <img src="img/richards-preview.jpg" alt=""/>
+                </div>
+                <h4>Services</h4>
+                <ul>
+                    <li>Logo Rework</li>
+                    <li>Full Web Design</li>
+                    <li>Custom Website</li>
+                    <li>Custom Icons</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Perfection Tire</h2>
+                <div class="preview">
+                    <img src="img/perfection-full.jpg" alt=""/>
+                </div>
+                <h4>Services</h4>
+                <ul>
+                    <li>Custom Website</li>
+                    <li>Stock Imagery</li>
+                </ul>
+            </section>
+        </div>
+        <div class="services page" ng-show="menu.isSection('services')">
+            <h1 class="page-title">Services</h1>
+            <section>
+                <h2>Web Development</h2>
+                <ul>
+                    <li>Web Applications</li>
+                    <li>Mobile Web Applications</li>
+                </ul>
+                <h2>Web Design</h2>
+                <ul>
+                    <li>Custom Website Design</li>
+                    <li>Logo Design</li>
+                </ul>
+            </section>
+        </div>
+        <div class="about page" ng-show="menu.isSection('about')">
+            <h1 class="page-title">About me</h1>
+            <!--
+            <div class="stats">
+                <div class="group development">
+                    Development
+                    <div class="sub-group frontend">
+                        Frontend
+                        <div class="skill css">CSS</div>
+                        <div class="skill html">HTML5</div>
+                        <div class="skill html">JavaScript</div>
+                    </div>
+                    <div class="sub-group backend">
+                        Backend
+                        <div class="skill python">Python</div>
+                        <div class="skill python">Django</div>
+                        <div class="skill python">PostgreSQL</div>
+                    </div>
+                </div>
+                <div class="group design">
+                    Design
+                    <div class="sub-group ux">
+                        UX
+                        <div class="skill photoshop">Photoshop</div>
+                        <div class="skill illustrator">Illustrator</div>
+                    </div>
+                    <div class="sub-group ui">
+                        UI
+                    </div>
+                </div>
+                <div class="group development">
+                    Project Management
+                    <div class="sub-group frontend">Frontend</div>
+                    <div class="sub-group backend">Backend</div>
+                </div>
+                <div class="skill skill-1"></div>
+                <div class="skill skill-1"></div>
+                <div class="skill skill-1"></div>
+                <div class="skill skill-1"></div>
+                <div class="skill skill-1"></div>
+            </div>
+            -->
+            <div class="content">
+                <div class="intro">I love life.  I also love a lot of things in my life.</div>
+
+                <div class="section">
+
+                    <div class="content">
+                        <img class="image" src="img/wedding.jpg" alt=""/>
+
+                        <div class="text">
+                            <div class="title">My Anchor</div>
+                            Without this beautiful mexican I'd be much less of a person.  Aside from holding my world together she is also an amazing
+                            <a href="https://www.facebook.com/SparrowBleuPhotography">Photographer</a>.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+
+                    <div class="content">
+                        <img class="image" src="img/violet.jpg" alt=""/>
+
+                        <div class="text">
+                        <div class="title">Violet</small></div>
+                            The greatest experience in life is to make it.  We thank God for this one daily.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+
+                    <div class="content">
+                        <img class="image" src="img/koala.jpg" alt=""/>
+
+                        <div class="text">
+                            <div class="title">Koala Bear <small>(aka Violet)</small></div>
+                            This little koala bear is the greatest thing to happen to me and my wife.  We love her to pieces!
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="content">
+                        <img class="image" src="img/canon.jpg" alt=""/>
+
+                        <div class="text">
+                            <div class="title">Canon</div>
+                            Canon is a high energy <a href="http://en.wikipedia.org/wiki/Cockapoo" target="_blank">cockapoo</a>.  He and I are a great match.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="content">
+                        <img class="image" src="img/drums.jpg" alt=""/>
+
+                        <div class="text">
+                            <div class="title">Drums</div>
+                            Oh man, I sure do love me some good drummin'.  The constant tapping and failed attempts at beat boxing sometimes elicit a well intended 'stop that!' from family and friends... and work.  The beat goes on!
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="content">
+                        <img class="image" src="img/80s.jpg" alt=""/>
+
+                        <div class="text">
+                            <div class="title">1980's Child</div>
+                            My middle name is 'Cruz N'.  Literally.  Cause that's how cool the 80s are.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="quote page" ng-show="menu.isSection('quote')">
+            <h1 class="page-title">Request a Quote</h1>
+        </div>
+    </div>
+</div>
+
+<!-- Java Script -->
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+<script>
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-47264104-1', 'levithomason.com');
+    ga('send', 'pageview');
+
+</script>
+</body>
+</html>
