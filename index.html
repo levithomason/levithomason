@@ -17,7 +17,7 @@
     <!-- Java Script -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular-animate.min.js"></script> 
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular-animate.min.js"></script>
     <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     <script src="js/controller.js"></script>
 
@@ -49,67 +49,200 @@
 
     <div class="main">
         <div class="work page" ng-show="menu.isSection('work')">
-            <h1 class="page-title">My Work</h1>
-            <section>
-                <h2>SparrowBleu Photography</h2>
-                <a href="http://proofing.sparrowbleuphotography.com" target="_blank">
-                    <i class="fa fa-picture-o"></i> Proofing Gallery App
-                </a>
-
-                <h4>Services</h4>
-                <ul>
-                    <li>Full Web App</li>
-                    <li>Custom Design</li>
-                    <li>Mobile Site</li>
-                    <li>Cloud deployment</li>
-                    <li>Amazon S3 Storage</li>
-                    <li>Django</li>
-                    <li>Python</li>
-                    <li>Javascript</li>
-                </ul>
-            </section>
-            <section>
-                <h2>Kai Morimoto Plastic Surgery</h2>
-                <div class="preview">
-                    <img src="img/kmp-preview.jpg" alt=""/>
+            <div class="project">
+                <h1 class="project_title">
+                    SparrowBleu Photography
+                    <div class="sub-heading">Client Proofing Galleries</div>
+                </h1>
+                <div class="description">
+                        You can <a href="http://proofing.sparrowbleuphotography.com" target="_blank">try a demo here</a>
+                        using passcode "<b>demo123</b>".
                 </div>
-                <h4>Services</h4>
-                <ul>
-                    <li>Logo Design</li>
-                    <li>Full Web Design</li>
-                    <li>Custom Website</li>
-                    <li>Stock Imagery</li>
-                    <li>Less/CSS</li>
-                    <li>HTML</li>
-                </ul>
-            </section>
-            <section>
-                <h2>Richards Law LLC</h2>
                 <div class="preview">
-                    <img src="img/richards-preview.jpg" alt=""/>
+                    <img class="image" src="img/sparrowbleu-preview.jpg" alt=""/>
                 </div>
-                <h4>Services</h4>
-                <ul>
-                    <li>Logo Rework</li>
-                    <li>Full Web Design</li>
-                    <li>Custom Website</li>
-                    <li>Custom Icons</li>
-                </ul>
-            </section>
-            <section>
-                <h2>Perfection Tire</h2>
+                <div class="info">
+                    <div class="features section">
+                        <div class="heading"><i class="icon fa fa-check"></i> Features</div>
+                        <ul class="list">
+                            <li class="item">Passcode access</li>
+                            <li class="item">Responsive Design (fits any screen)</li>
+                            <li class="item">Select favorites</li>
+                            <li class="item">Keyboard shortcuts</li>
+                            <li class="item">Photo cost calculator</li>
+                            <li class="item">View all & favorites</li>
+                            <li class="item">View thumbnails & fullscreen</li>
+                            <li class="item">Send photos to photographer</li>
+                        </ul>
+                    </div>
+                    <div class="services section">
+                        <div class="heading"><i class="icon fa fa-wrench"></i> Services</div>
+                        <ul class="list">
+                            <li class="item">Full Web App</li>
+                            <li class="item">Design Augmentation</li>
+                            <li class="item">User Interface</li>
+                            <li class="item">User Experience</li>
+                            <li class="item">Mobile Site</li>
+                            <li class="item">Cloud Deployment</li>
+                        </ul>
+                    </div>
+                    <div class="technologies section">
+                        <div class="heading"><i class="icon fa fa-cogs"></i> Technologies</div>
+                        <ul class="list">
+                            <li class="item"><a href="https://www.python.org/">Python</a></li>
+                            <li class="item"><a href="https://www.djangoproject.com/">Django</a></li>
+                            <li class="item"><a href="http://aws.amazon.com/s3/">Amazon S3</a></li>
+                            <li class="item"><a href="https://www.heroku.com/">Heroku</a></li>
+                            <li class="item"><a href="https://postmarkapp.com/">Postmark</a></li>
+                            <li class="item"><a href="http://www.postgresql.org/">PostgreSQL</a></li>
+                            <li class="item"><a href="https://getsentry.com/">Sentry</a></li>
+                            <li class="item"><a href="http://en.wikipedia.org/wiki/HTML5">HTML5</a></li>
+                            <li class="item"><a href="http://en.wikipedia.org/wiki/Cascading_Style_Sheets">CSS3</a></li>
+                            <li class="item"><a href="http://lesscss.org/">LESS</a></li>
+                            <li class="item"><a href="http://en.wikipedia.org/wiki/JavaScript">Javascript</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="project">
+                <h1 class="project_title">
+                    Kai Morimoto Plastic Surgery
+                    <div class="sub-heading">Primary Marketing Site</div>
+                </h1>
+                <div class="description">
+                    I produced all artwork depicted below. I did not have the opportunity to build the <a href="http://www.kmplasticsurgery.com/" target="_blank">final site</a>.
+                </div>
                 <div class="preview">
-                    <img src="img/perfection-full.jpg" alt=""/>
+                    <img class="image" src="img/kmp-preview.jpg" alt=""/>
                 </div>
-                <h4>Services</h4>
-                <ul>
-                    <li>Custom Website</li>
-                    <li>Stock Imagery</li>
-                </ul>
-            </section>
+                <div class="info">
+                    <div class="features section">
+                        <div class="heading"><i class="icon fa fa-check"></i> Features</div>
+                        <ul class="list">
+                            <li class="item">Giant Animated Nav</li>
+                            <li class="item">Image Slider</li>
+                            <li class="item">Tap to Call Phone Always on Page</li>
+                            <li class="item">Testimonials</li>
+                            <li class="item">Online Booking Form</li>
+                            <li class="item">Product Catalog</li>
+                            <li class="item">Responsive Design (fits any screen)</li>
+                        </ul>
+                    </div>
+                    <div class="services section">
+                        <div class="heading"><i class="icon fa fa-wrench"></i> Services</div>
+                        <ul class="list">
+                            <li class="item">Branding</li>
+                            <li class="item">Custom Logo</li>
+                            <li class="item">Custom Theme</li>
+                            <li class="item">Stock Imagery</li>
+                        </ul>
+                    </div>
+                    <div class="technologies section">
+                        <div class="heading"><i class="icon fa fa-cogs"></i> Technologies</div>
+                        <ul class="list">
+                            <li class="item"><a href="http://www.php.net/">PHP</a></li>
+                            <li class="item"><a href="http://en.wikipedia.org/wiki/HTML5">HTML5</a></li>
+                            <li class="item"><a href="http://en.wikipedia.org/wiki/Cascading_Style_Sheets">CSS3</a></li>
+                            <li class="item"><a href="http://lesscss.org/">LESS</a></li>
+                            <li class="item"><a href="http://en.wikipedia.org/wiki/JavaScript">Javascript</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="project">
+                <h1 class="project_title">
+                    Richards Law LLC
+                    <div class="sub-heading">Primary Marketing Site</div>
+                </h1>
+                <div class="description">
+                    Another design project I got to have a lot of fun with.  Two versions, one with custom icons headlining each section of the site and another with stock images.
+                </div>
+                <div class="preview">
+                    <img class="image" src="img/richards-preview.jpg" alt=""/>
+                </div>
+                <div class="info">
+                    <div class="features section">
+                        <div class="heading"><i class="icon fa fa-check"></i> Features</div>
+                        <ul class="list">
+                            <li class="item">YouTube Commercial</li>
+                            <li class="item">Sticky Header</li>
+                            <li class="item">Free Consultation Form</li>
+                            <li class="item">Awards & Recognition</li>
+                            <li class="item">Single Page Site</li>
+                            <li class="item">Responsive Design (fits any screen)</li>
+                        </ul>
+                    </div>
+                    <div class="services section">
+                        <div class="heading"><i class="icon fa fa-wrench"></i> Services</div>
+                        <ul class="list">
+                            <li class="item">Logo Rework</li>
+                            <li class="item">Stock Imagery</li>
+                            <li class="item">Custom Theme</li>
+                            <li class="item">Custom Icons</li>
+                            <li class="item">Google Map</li>
+                            <li class="item">Rapid Prototype</li>
+                        </ul>
+                    </div>
+                    <div class="technologies section">
+                        <div class="heading"><i class="icon fa fa-cogs"></i> Technologies</div>
+                        <ul class="list">
+                            <li class="item"><a href="http://en.wikipedia.org/wiki/HTML5">HTML5</a></li>
+                            <li class="item"><a href="http://en.wikipedia.org/wiki/Cascading_Style_Sheets">CSS3</a></li>
+                            <li class="item"><a href="http://lesscss.org/">LESS</a></li>
+                            <li class="item"><a href="http://en.wikipedia.org/wiki/JavaScript">Javascript</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="project">
+                <h1 class="project_title">
+                    Perfection Tire
+                    <div class="sub-heading">Multi-Store Corporate Site</div>
+                </h1>
+                <div class="description">
+                    Very short time frame for this design.  The development sounded like a great problem set to solve.  The coupons depicted were to be updated at a later date as well.
+                </div>
+                <div class="preview">
+                    <img class="image" src="img/perfection-full.jpg" alt=""/>
+                </div>
+                <div class="info">
+                    <div class="features section">
+                        <div class="heading"><i class="icon fa fa-check"></i> Features</div>
+                        <ul class="list">
+                            <li class="item">YouTube Commercials</li>
+                            <li class="item">Store Locator</li>
+                            <li class="item">Coupons</li>
+                            <li class="item">Product Catalog</li>
+                            <li class="item">Responsive Design (fits any screen)</li>
+                        </ul>
+                    </div>
+                    <div class="services section">
+                        <div class="heading"><i class="icon fa fa-wrench"></i> Services</div>
+                        <ul class="list">
+                            <li class="item">Update Old Design</li>
+                            <li class="item">Stock Imagery</li>
+                            <li class="item">Custom Theme</li>
+                            <li class="item">Custom Icons</li>
+                            <li class="item">Brand Repurposing (not just tires)</li>
+                            <li class="item">Item Catalog Prototype</li>
+                        </ul>
+                    </div>
+                    <div class="technologies section">
+                        <div class="heading"><i class="icon fa fa-cogs"></i> Technologies</div>
+                        <ul class="list">
+                            <li class="item"><a href="https://www.heroku.com/">Heroku</a></li>
+                            <li class="item"><a href="http://angularjs.org/">AngularJS</a></li>
+                            <li class="item"><a href="http://isotope.metafizzy.co/"></a>Isotope</li>
+                            <li class="item"><a href="http://en.wikipedia.org/wiki/HTML5">HTML5</a></li>
+                            <li class="item"><a href="http://en.wikipedia.org/wiki/Cascading_Style_Sheets">CSS3</a></li>
+                            <li class="item"><a href="http://lesscss.org/">LESS</a></li>
+                            <li class="item"><a href="http://en.wikipedia.org/wiki/JavaScript">Javascript</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="services page" ng-show="menu.isSection('services')">
-            <h1 class="page-title">Services</h1>
             <section>
                 <h2>Web Development</h2>
                 <ul>
@@ -118,13 +251,14 @@
                 </ul>
                 <h2>Web Design</h2>
                 <ul>
-                    <li>Custom Website Design</li>
+                    <li>Custom Website</li>
+                    <li>Branding</li>
                     <li>Logo Design</li>
+                    <li>Stationery</li>
                 </ul>
             </section>
         </div>
         <div class="about page" ng-show="menu.isSection('about')">
-            <h1 class="page-title">About me</h1>
             <!--
             <div class="stats">
                 <div class="group development">
@@ -240,7 +374,7 @@
             </div>
         </div>
         <div class="quote page" ng-show="menu.isSection('quote')">
-            <h1 class="page-title">Request a Quote</h1>
+
         </div>
     </div>
 </div>

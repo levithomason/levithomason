@@ -18,16 +18,90 @@
 @lt-logo-text-margin: 20px;
 @lt-logo-max-width: 130px;
 
+/*****************
+ * General Styles
+ ****************/
+
 body {
     font-family: 'Alegreya Sans', sans-serif;
     background: @lt-background-color;
     .box-sizing(border-box);
-    color: #444;
+    color: #504d4d;
 }
 
 img {
     max-width: 100%;
 }
+
+/*****************
+ * Typography
+ ****************/
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+    line-height: 1;
+
+    .sub-heading {
+        font-size: 80%;
+        font-weight: 100;
+        color: #988;
+        line-height: 1.2;
+    }
+}
+
+a {
+    color: @lt-red;
+    text-decoration: none;
+    border-bottom: 1px dashed fade(@lt-red, 30%);
+    &:hover {
+        color: lighten(@lt-red, 5%);
+        border-bottom-color: fade(@lt-red, 40%);
+    }
+    &:active {
+        color:  darken(@lt-red, 10%);
+        border-bottom-color:  fade(@lt-red, 50%);
+    }
+}
+
+/*****************
+ * Buttons
+ ****************/
+
+.lt-btn {
+    @lt-btn-padding: 10px;
+    display: inline-block;
+    padding: 0 @lt-btn-padding;
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 4px solid darken(@lt-red, 5%);
+    border-radius: 2px;
+    background: lighten(@lt-red, 3%);
+    box-shadow: 0 2px 3px rgba(0,0,0,0.3);
+    &:hover {
+        text-decoration: none;
+        background: lighten(@lt-red, 5%);
+    }
+    &:active {
+        position: relative;
+        top: 1px;
+        margin-bottom: 1px;
+        border-bottom-width: 3px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    .icon,
+    .text {
+        padding: @lt-btn-padding;
+    }
+    .icon {
+        display: inline-block;
+    }
+}
+
+
+/*****************
+ * App
+ ****************/
 
 .container {
     position: absolute;
@@ -167,11 +241,6 @@ img {
                 opacity: 0;
             }
 
-            .page-title {
-                display: none;
-                text-align: center;
-            }
-
             .intro {
                 font-size: 24px;
                 margin-bottom: 80px;
@@ -224,12 +293,62 @@ img {
             Work page
             */
             &.work {
-                section {
-                    padding: 60px 0;
+                .project {
+                    padding: 40px 0;
                     border-bottom: 2px solid #DDD;
 
-                    img {
-                        box-shadow: 0 2px 3px rgba(0,0,0,0.3);
+                    .project_title {
+                        margin: 40px 0;
+                    }
+                    .description {
+                        margin: 20px 0;
+                    }
+                    .preview {
+                        margin: 40px 0;
+                        .image {
+                            box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+                        }
+                    }
+                    .info {
+                        overflow: hidden;
+                        color: #908d8d;
+                        margin: 0 0 40px 0;
+
+                        .list {
+                            padding: 0;
+                            margin: 0;
+                            .item {
+                                float: left;
+                                list-style: none;
+                                padding: 6px 10px;
+                            }
+                        }
+                        .section {
+                            float: left;
+                            width: 30%;
+                            margin: 0 1.666%;
+                            &.features {
+                                .list {
+                                    .item {
+                                        clear: both;
+                                    }
+                                }
+                            }
+                            &.services {
+                            }
+                            &.technologies {
+                            }
+
+                            .heading {
+                                margin: 10px 0;
+                                line-height: 1.5;
+                                border-bottom: 1px solid #DDD;
+
+                                .icon {
+                                    margin-right: 2px;
+                                }
+                            }
+                        }
                     }
                 }
             }

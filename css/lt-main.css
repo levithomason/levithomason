@@ -13,17 +13,90 @@
 /*****************
  * Variables
  ****************/
+/*****************
+ * General Styles
+ ****************/
 body {
   font-family: 'Alegreya Sans', sans-serif;
   background: #efefeb;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  color: #444;
+  color: #504d4d;
 }
 img {
   max-width: 100%;
 }
+/*****************
+ * Typography
+ ****************/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+  line-height: 1;
+}
+h1 .sub-heading,
+h2 .sub-heading,
+h3 .sub-heading,
+h4 .sub-heading,
+h5 .sub-heading,
+h6 .sub-heading {
+  font-size: 80%;
+  font-weight: 100;
+  color: #988;
+  line-height: 1.2;
+}
+a {
+  color: #8f0000;
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(143, 0, 0, 0.3);
+}
+a:hover {
+  color: #a90000;
+  border-bottom-color: rgba(143, 0, 0, 0.4);
+}
+a:active {
+  color: #5c0000;
+  border-bottom-color: rgba(143, 0, 0, 0.5);
+}
+/*****************
+ * Buttons
+ ****************/
+.lt-btn {
+  display: inline-block;
+  padding: 0 10px;
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 4px solid #760000;
+  border-radius: 2px;
+  background: #9e0000;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+}
+.lt-btn:hover {
+  text-decoration: none;
+  background: #a90000;
+}
+.lt-btn:active {
+  position: relative;
+  top: 1px;
+  margin-bottom: 1px;
+  border-bottom-width: 3px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+.lt-btn .icon,
+.lt-btn .text {
+  padding: 10px;
+}
+.lt-btn .icon {
+  display: inline-block;
+}
+/*****************
+ * App
+ ****************/
 .container {
   position: absolute;
   margin: 0 auto;
@@ -222,10 +295,6 @@ img {
   transform: perspective(1200px) translate3d(0, -25px, 50px) rotateX(2.5deg);
   opacity: 0;
 }
-.container .main .page .page-title {
-  display: none;
-  text-align: center;
-}
 .container .main .page .intro {
   font-size: 24px;
   margin-bottom: 80px;
@@ -267,12 +336,51 @@ img {
   color: #3f3f3f;
   font-size: 21px;
 }
-.container .main .page.work section {
-  padding: 60px 0;
+.container .main .page.work .project {
+  padding: 40px 0;
   border-bottom: 2px solid #DDD;
 }
-.container .main .page.work section img {
+.container .main .page.work .project .project_title {
+  margin: 40px 0;
+}
+.container .main .page.work .project .description {
+  margin: 20px 0;
+}
+.container .main .page.work .project .preview {
+  margin: 40px 0;
+}
+.container .main .page.work .project .preview .image {
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+}
+.container .main .page.work .project .info {
+  overflow: hidden;
+  color: #908d8d;
+  margin: 0 0 40px 0;
+}
+.container .main .page.work .project .info .list {
+  padding: 0;
+  margin: 0;
+}
+.container .main .page.work .project .info .list .item {
+  float: left;
+  list-style: none;
+  padding: 6px 10px;
+}
+.container .main .page.work .project .info .section {
+  float: left;
+  width: 30%;
+  margin: 0 1.666%;
+}
+.container .main .page.work .project .info .section.features .list .item {
+  clear: both;
+}
+.container .main .page.work .project .info .section .heading {
+  margin: 10px 0;
+  line-height: 1.5;
+  border-bottom: 1px solid #DDD;
+}
+.container .main .page.work .project .info .section .heading .icon {
+  margin-right: 2px;
 }
 .container .main .page.about .group {
   border: 1px solid whitesmoke;
