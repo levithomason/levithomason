@@ -7,19 +7,21 @@
     <title>Levi Thomason</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
+    <link rel="icon" type="image/png" href="favicon.png">
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/normalize.min.css">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
     <link rel="stylesheet" href="css/lt-main.css">
 
     <!-- Java Script -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular-animate.min.js"></script>
-    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
-    <script src="js/controller.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular.min.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular-animate.min.js"></script>
+    <script type="text/javascript" src="js/vendor/modernizr-2.6.2.min.js"></script>
+    <script type="text/javascript" src="js/controller.js"></script>
 
     <!-- Google Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans:100,400,700' rel='stylesheet' type='text/css'>
@@ -259,48 +261,133 @@
             </section>
         </div>
         <div class="about page" ng-show="menu.isSection('about')">
-            <!--
+
+            <h1>I'm Levi</h1>
+
             <div class="stats">
-                <div class="group development">
-                    Development
-                    <div class="sub-group frontend">
-                        Frontend
-                        <div class="skill css">CSS</div>
-                        <div class="skill html">HTML5</div>
-                        <div class="skill html">JavaScript</div>
+                <div class="chart">
+                    <div class="grid">
+                        <div class="line">
+                            <div class="label">Senior</div>
+                        </div>
+                        <div class="line">
+                            <div class="label">Intermediate</div>
+                        </div>
+                        <div class="line">
+                            <div class="label">Junior</div>
+                        </div>
+                        <div class="line">
+                            <div class="label">Fledgling</div>
+                        </div>
                     </div>
-                    <div class="sub-group backend">
-                        Backend
-                        <div class="skill python">Python</div>
-                        <div class="skill python">Django</div>
-                        <div class="skill python">PostgreSQL</div>
-                    </div>
-                </div>
-                <div class="group design">
-                    Design
-                    <div class="sub-group ux">
-                        UX
-                        <div class="skill photoshop">Photoshop</div>
-                        <div class="skill illustrator">Illustrator</div>
-                    </div>
-                    <div class="sub-group ui">
-                        UI
+                    <div class="groups">
+                        <div class="group" ng-repeat="group in stats" style="width: {{ 100 / stats.length }}%">
+                            <div class="bar" style="height: {{ group.scale }}%"></div>
+                            <div class="items">
+                                <div class="item" ng-repeat="item in group.items">{{ item }}</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="group development">
-                    Project Management
-                    <div class="sub-group frontend">Frontend</div>
-                    <div class="sub-group backend">Backend</div>
+                <div class="labels">
+                    <div class="label" ng-repeat="group in stats" style="width: {{ 100 / stats.length }}%">{{ group.name }}</div>
                 </div>
-                <div class="skill skill-1"></div>
-                <div class="skill skill-1"></div>
-                <div class="skill skill-1"></div>
-                <div class="skill skill-1"></div>
-                <div class="skill skill-1"></div>
             </div>
-            -->
+
+            <hr/>
+
+            <div class="description">
+                <h1>About</h1>
+
+                <p>
+                    I build beautiful web apps.
+                    My passion is <b>UX</b> and <b>UI</b>.
+                    I've got 2 years front-end development experience riding on a 13+ year design background.
+                    I know <b>Photoshop</b> and <b>Illustrator</b>.
+                    My toolbox is full of modern front-end web technologies like <b>HTML5</b>, <b>CSS3/LESS</b>, <b>JavaScript</b>,
+                    <b>Twitter Bootstrap</b>, <b>AngularJS</b>, <b>jQuery</b>, Firebase, Grunt, Gulp, Bower, npm, node.js, etc.
+                    I know some <b>Python</b> and <b>Django</b>, too.
+                </p>
+
+                <p>
+                    Right now I’m <b>heavily</b> into AngularJS, LESS, and Bootstrap. I write HTML5, CSS/LESS, and JavaScript
+                    everyday. I can bring any design to life on web, and thoroughly enjoy doing it.
+                    <b>Git</b>, <b>agile</b> development, feature branching, and <b>continuous deployment</b> are part of my daily routine.
+                    I have some <b>open source</b> projects and I also <b>contribute</b> to the community.
+                </p>
+            </div>
+
+            <hr/>
+
+            <div class="projects">
+                <h1>Projects</h1>
+
+                <div class="project">
+                    <div class="name">ScrapBin</div>
+                    <div class="position">Front-End Developer, Team Lead</div>
+                    <ul class="duties">
+                        <li>Architected the LESS/CSS framework</li>
+                        <li>Led UX / UI</li>
+                        <li>Wrote Angular code everyday</li>
+                        <li>Unit and e2e tested everything</li>
+                        <li>Git, feature branching, continuous deployment</li>
+                        <li><a href="https://www.scrapbin.com" target="_blank">Try it</a></li>
+                    </ul>
+                </div>
+
+                <div class="project">
+                    <div class="name">
+                        <a href="https://www.github.com/levithomason/bootstyle" target="_blank">Bootstyle</a>
+                    </div>
+                    <div class="position">Author</div>
+                    <ul class="duties">
+                        <li>Authored</li>
+                        <li>In browser Twitter Bootstrap customizer</li>
+                        <li>Setup automated build & deployment</li>
+                        <li>Setup testing suite</li>
+                        <li>Built in live reload, LESS compiling, HTML editor, client side file downloads</li>
+                        <li><a href="https://www.usebootstyle.com" target="_blank">Try it</a></li>
+                    </ul>
+                </div>
+
+                <div class="project">
+                    <div class="name">
+                        <a href="https://www.github.com/levithomason/sparrowbleu" target="_blank">Proofing Gallery</a>
+                    </div>
+                    <div class="position">Author</div>
+                    <ul class="duties">
+                        <li>Author</li>
+                        <li>Drag n’ drop uploads</li>
+                        <li>Mobile and desktop versions</li>
+                        <li>Favoriting images</li>
+                        <li>Cost calculator</li>
+                        <li>Summary emails with thumbnails</li>
+                        <li><a href="https://proofing.sparrowbleuphotography.com" target="_blank">Try it</a> (passcode: 'demo123')</li>
+                    </ul>
+                </div>
+
+                <div class="project">
+                    <div class="name">
+                        <a href="www.github.com/bgrins/tinycolor">TinyColor
+                            <small><i>by Brian Grins @ Mozilla</i></small>
+                        </a>
+                    </div>
+                    <div class="position">Contributor</div>
+                    <ul class="duties">
+                        <li>Contributed features, tests, and docs</li>
+                        <li>Engine behind chrome dev tools color picker</li>
+                        <li><a href="https://github.com/bgrins/TinyColor/issues/56">Was asked to help design apiv1</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr/>
+            <hr/>
+
             <div class="content">
-                <div class="intro">I love life.  I also love a lot of things in my life.</div>
+
+                <h1 class="intro">I love life.  I also love a lot of things in my life.</h1>
 
                 <div class="section">
 
@@ -373,9 +460,8 @@
                 </div>
             </div>
         </div>
-        <div class="quote page" ng-show="menu.isSection('quote')">
-            <h1>Coming soon...</h1>
-            <p>For now, you can reach me here: <a href="mailto:me@levithomason.com">me@levithomason.com</a>.</p>
+        <div class="blog page" ng-show="menu.isSection('blog')">
+            <h1>Working on it!</h1>
         </div>
     </div>
 </div>

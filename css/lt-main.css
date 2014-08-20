@@ -231,7 +231,7 @@ a:active {
   top: 25%;
   left: 50%;
 }
-.container .menu .menu-item.quote {
+.container .menu .menu-item.blog {
   top: 75%;
   left: 0%;
 }
@@ -382,25 +382,97 @@ a:active {
 .container .main .page.work .project .info .section .heading .icon {
   margin-right: 2px;
 }
-.container .main .page.about .group {
-  border: 1px solid whitesmoke;
-  padding: 10px;
+.container .main .page.about .stats {
+  margin: 40px 0;
 }
-.container .main .page.about .group .sub-group .skill {
-  padding: 4px 12px;
-  margin: 1px;
-  background: #8F0000;
-  line-height: 30px;
-  color: #F3DCDC;
+.container .main .page.about .stats .chart {
+  position: relative;
+  height: 200px;
 }
-.container .main .page.about .group .sub-group.frontend .css {
-  width: 33%;
+.container .main .page.about .stats .chart .groups {
+  height: 100%;
+  padding-right: 100px;
+  border-bottom: 1px solid #3f3f3f;
 }
-.container .main .page.about .group .sub-group.frontend .html {
-  width: 33%;
+.container .main .page.about .stats .chart .groups .group {
+  position: relative;
+  float: left;
+  height: 100%;
+  box-sizing: border-box;
+  border: 10px solid transparent;
+  border-bottom: none;
 }
-.container .main .page.about .group .sub-group.frontend .javascript {
-  width: 33%;
+.container .main .page.about .stats .chart .groups .group .bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #999;
+  opacity: 0.8;
+}
+.container .main .page.about .stats .chart .groups .group .bar:hover + .items {
+  display: block;
+}
+.container .main .page.about .stats .chart .groups .group .items {
+  position: absolute;
+  display: none;
+  bottom: 0;
+}
+.container .main .page.about .stats .chart .groups .group .items:hover {
+  display: block;
+}
+.container .main .page.about .stats .chart .groups .group .items .item {
+  padding: 2px 8px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 300;
+}
+.container .main .page.about .stats .chart .grid {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.container .main .page.about .stats .chart .grid .line {
+  margin-top: 1px;
+  height: 25%;
+  border-top: 1px dashed rgba(143, 0, 0, 0.25);
+  text-align: right;
+  box-sizing: border-box;
+  line-height: 0;
+}
+.container .main .page.about .stats .chart .grid .label {
+  display: inline-block;
+  padding-left: 10px;
+  color: rgba(63, 63, 63, 0.5);
+  background: #efefeb;
+  line-height: 1;
+  margin-top: -24px;
+  text-align: left;
+}
+.container .main .page.about .stats .labels {
+  padding-right: 100px;
+}
+.container .main .page.about .stats .labels .label {
+  display: inline-block;
+  padding: 10px 0;
+  font-size: 18px;
+  font-weight: 500;
+  color: #8f0000;
+  text-transform: uppercase;
+  text-align: center;
+}
+.container .main .page.about .projects .project {
+  float: left;
+  width: 50%;
+  margin-bottom: 40px;
+}
+.container .main .page.about .projects .project .name {
+  font-size: 18px;
+}
+.container .main .page.about .projects .project .position {
+  font-weight: bold;
 }
 .container.home .menu .logo .text {
   height: 50px;
@@ -441,7 +513,7 @@ a:active {
   left: 40%;
   width: 20%;
 }
-.container:not(.home) .menu .menu-item.quote {
+.container:not(.home) .menu .menu-item.blog {
   top: 0px;
   left: 60%;
   width: 20%;

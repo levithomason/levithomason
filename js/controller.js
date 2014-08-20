@@ -33,14 +33,14 @@ angular.module('ltApp', ['ngAnimate']).controller('ltMainController', ['$scope',
                     return $scope.menu.isSection('services') ? 'services active' : 'services';
                 }
             },
-            'Quote': {
-                'name': "Quote",
-                'key': 'quote',
+            'Blog': {
+                'name': "Blog",
+                'key': 'blog',
                 'active': function() {
-                    $scope.menu.isSection('quote');
+                    $scope.menu.isSection('blog');
                 },
                 'classes': function() {
-                    return $scope.menu.isSection('quote') ? 'quote active' : 'quote';
+                    return $scope.menu.isSection('blog') ? 'blog active' : 'blog';
                 }
             },
             'About': {
@@ -80,6 +80,44 @@ angular.module('ltApp', ['ngAnimate']).controller('ltMainController', ['$scope',
             }
         }
     };
+
+    $scope.stats = [
+        {
+            name: 'Front-end',
+            scale: 70,
+            items: [
+                'HTML5',
+                'CSS3/LESS',
+                'JavaScript',
+                'AngularJS',
+                'Bootstrap'
+            ]
+        },
+        {
+            name: 'Back-end',
+            scale: 45,
+            items: [
+                'Python',
+                'Django'
+            ]
+        },
+        {
+            name: 'Design',
+            scale: 95,
+            items: [
+                'Photoshop',
+                'Illustrator'
+            ]
+        },
+        {
+            name: 'DBA',
+            scale: 30,
+            items: [
+                'PostgreSQL',
+                'MySQL'
+            ]
+        }
+    ];
 
     $scope.ltInit = function() {
         $scope.menu.setSection('home');
