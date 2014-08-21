@@ -17,473 +17,60 @@
     <link rel="stylesheet" href="css/lt-main.css">
 
     <!-- Java Script -->
-    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular.min.js"></script>
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular-animate.min.js"></script>
-    <script type="text/javascript" src="js/vendor/modernizr-2.6.2.min.js"></script>
-    <script type="text/javascript" src="js/controller.js"></script>
+    <script type="text/javascript" src="//code.angularjs.org/1.2.9/angular-route.js"></script>
+    <script type="text/javascript" src="js/controllers.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
 
     <!-- Google Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans:100,400,700' rel='stylesheet' type='text/css'>
 
 </head>
 
-<body ng-controller="ltMainController" ng-init="ltInit()" ng-show="initialized">
-<!--[if lt IE 7]>
-<p class=chromeframe>Your browser is <em>ancient!</em>
-    <a href="http://browsehappy.com/">Upgrade to a different browser</a> or
-    <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.
-</p>
-<![endif]-->
-<div class="container" ng-class="menu.section">
-    <nav class="menu">
-        <div class="logo" ng-click="logo.clicked()">
-            <img class="image" ng-src="{{ logo.src }}" alt=""/>
-            <div class="text">
-                <div class="name">Levi Thomason</div>
-                <div class="title">Web Developer</div>
-            </div>
-        </div>
-        <div class="menu-item" ng-repeat="i in menu.items" ng-class="i.classes()">
-            <div class="text" ng-click="menu.setSection(i.key)">{{ i.name }}</div>
+<body>
+    <!--[if lt IE 7]>
+    <p class=chromeframe>Your browser is <em>ancient!</em>
+        <a href="http://browsehappy.com/">Upgrade to a different browser</a> or
+        <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.
+    </p>
+    <![endif]-->
+
+    <nav class="main_nav">
+        <div class="container">
+            <a href="/#/" class="link logo">
+                <img ng-src="/img/logo-small.png" alt="LT logo"/>
+            </a>
+            <a href="/#/portfolio" class="link">Portfolio</a>
+            <a href="/#/resume" class="link">Resume</a>
+            <a href="/#/about" class="link">About</a>
         </div>
     </nav>
 
-    <div class="main">
-        <div class="work page" ng-show="menu.isSection('work')">
-            <div class="project">
-                <h1 class="project_title">
-                    SparrowBleu Photography
-                    <div class="sub-heading">Client Proofing Galleries</div>
-                </h1>
-                <div class="description">
-                        You can <a href="http://proofing.sparrowbleuphotography.com" target="_blank">try a demo here</a>
-                        using passcode "<b>demo123</b>".
-                </div>
-                <div class="preview">
-                    <img class="image" src="img/sparrowbleu-preview.jpg" alt=""/>
-                </div>
-                <div class="info">
-                    <div class="features section">
-                        <div class="heading"><i class="icon fa fa-check"></i> Features</div>
-                        <ul class="list">
-                            <li class="item">Passcode access</li>
-                            <li class="item">Responsive Design (fits any screen)</li>
-                            <li class="item">Select favorites</li>
-                            <li class="item">Keyboard shortcuts</li>
-                            <li class="item">Photo cost calculator</li>
-                            <li class="item">View all & favorites</li>
-                            <li class="item">View thumbnails & fullscreen</li>
-                            <li class="item">Send photos to photographer</li>
-                        </ul>
-                    </div>
-                    <div class="services section">
-                        <div class="heading"><i class="icon fa fa-wrench"></i> Services</div>
-                        <ul class="list">
-                            <li class="item">Full Web App</li>
-                            <li class="item">Design Augmentation</li>
-                            <li class="item">User Interface</li>
-                            <li class="item">User Experience</li>
-                            <li class="item">Mobile Site</li>
-                            <li class="item">Cloud Deployment</li>
-                        </ul>
-                    </div>
-                    <div class="technologies section">
-                        <div class="heading"><i class="icon fa fa-cogs"></i> Technologies</div>
-                        <ul class="list">
-                            <li class="item"><a href="https://www.python.org/">Python</a></li>
-                            <li class="item"><a href="https://www.djangoproject.com/">Django</a></li>
-                            <li class="item"><a href="http://aws.amazon.com/s3/">Amazon S3</a></li>
-                            <li class="item"><a href="https://www.heroku.com/">Heroku</a></li>
-                            <li class="item"><a href="https://postmarkapp.com/">Postmark</a></li>
-                            <li class="item"><a href="http://www.postgresql.org/">PostgreSQL</a></li>
-                            <li class="item"><a href="https://getsentry.com/">Sentry</a></li>
-                            <li class="item"><a href="http://en.wikipedia.org/wiki/HTML5">HTML5</a></li>
-                            <li class="item"><a href="http://en.wikipedia.org/wiki/Cascading_Style_Sheets">CSS3</a></li>
-                            <li class="item"><a href="http://lesscss.org/">LESS</a></li>
-                            <li class="item"><a href="http://en.wikipedia.org/wiki/JavaScript">Javascript</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="project">
-                <h1 class="project_title">
-                    Kai Morimoto Plastic Surgery
-                    <div class="sub-heading">Primary Marketing Site</div>
-                </h1>
-                <div class="description">
-                    I produced all artwork depicted below. I did not have the opportunity to build the <a href="http://www.kmplasticsurgery.com/" target="_blank">final site</a>.
-                </div>
-                <div class="preview">
-                    <img class="image" src="img/kmp-preview.jpg" alt=""/>
-                </div>
-                <div class="info">
-                    <div class="features section">
-                        <div class="heading"><i class="icon fa fa-check"></i> Features</div>
-                        <ul class="list">
-                            <li class="item">Giant Animated Nav</li>
-                            <li class="item">Image Slider</li>
-                            <li class="item">Tap to Call Phone Always on Page</li>
-                            <li class="item">Testimonials</li>
-                            <li class="item">Online Booking Form</li>
-                            <li class="item">Product Catalog</li>
-                            <li class="item">Responsive Design (fits any screen)</li>
-                        </ul>
-                    </div>
-                    <div class="services section">
-                        <div class="heading"><i class="icon fa fa-wrench"></i> Services</div>
-                        <ul class="list">
-                            <li class="item">Branding</li>
-                            <li class="item">Custom Logo</li>
-                            <li class="item">Custom Theme</li>
-                            <li class="item">Stock Imagery</li>
-                        </ul>
-                    </div>
-                    <div class="technologies section">
-                        <div class="heading"><i class="icon fa fa-cogs"></i> Technologies</div>
-                        <ul class="list">
-                            <li class="item"><a href="http://www.php.net/">PHP</a></li>
-                            <li class="item"><a href="http://en.wikipedia.org/wiki/HTML5">HTML5</a></li>
-                            <li class="item"><a href="http://en.wikipedia.org/wiki/Cascading_Style_Sheets">CSS3</a></li>
-                            <li class="item"><a href="http://lesscss.org/">LESS</a></li>
-                            <li class="item"><a href="http://en.wikipedia.org/wiki/JavaScript">Javascript</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="project">
-                <h1 class="project_title">
-                    Richards Law LLC
-                    <div class="sub-heading">Primary Marketing Site</div>
-                </h1>
-                <div class="description">
-                    Another design project I got to have a lot of fun with.  Two versions, one with custom icons headlining each section of the site and another with stock images.
-                </div>
-                <div class="preview">
-                    <img class="image" src="img/richards-preview.jpg" alt=""/>
-                </div>
-                <div class="info">
-                    <div class="features section">
-                        <div class="heading"><i class="icon fa fa-check"></i> Features</div>
-                        <ul class="list">
-                            <li class="item">YouTube Commercial</li>
-                            <li class="item">Sticky Header</li>
-                            <li class="item">Free Consultation Form</li>
-                            <li class="item">Awards & Recognition</li>
-                            <li class="item">Single Page Site</li>
-                            <li class="item">Responsive Design (fits any screen)</li>
-                        </ul>
-                    </div>
-                    <div class="services section">
-                        <div class="heading"><i class="icon fa fa-wrench"></i> Services</div>
-                        <ul class="list">
-                            <li class="item">Logo Rework</li>
-                            <li class="item">Stock Imagery</li>
-                            <li class="item">Custom Theme</li>
-                            <li class="item">Custom Icons</li>
-                            <li class="item">Google Map</li>
-                            <li class="item">Rapid Prototype</li>
-                        </ul>
-                    </div>
-                    <div class="technologies section">
-                        <div class="heading"><i class="icon fa fa-cogs"></i> Technologies</div>
-                        <ul class="list">
-                            <li class="item"><a href="http://en.wikipedia.org/wiki/HTML5">HTML5</a></li>
-                            <li class="item"><a href="http://en.wikipedia.org/wiki/Cascading_Style_Sheets">CSS3</a></li>
-                            <li class="item"><a href="http://lesscss.org/">LESS</a></li>
-                            <li class="item"><a href="http://en.wikipedia.org/wiki/JavaScript">Javascript</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="project">
-                <h1 class="project_title">
-                    Perfection Tire
-                    <div class="sub-heading">Multi-Store Corporate Site</div>
-                </h1>
-                <div class="description">
-                    Very short time frame for this design.  The development sounded like a great problem set to solve.  The coupons depicted were to be updated at a later date as well.
-                </div>
-                <div class="preview">
-                    <img class="image" src="img/perfection-full.jpg" alt=""/>
-                </div>
-                <div class="info">
-                    <div class="features section">
-                        <div class="heading"><i class="icon fa fa-check"></i> Features</div>
-                        <ul class="list">
-                            <li class="item">YouTube Commercials</li>
-                            <li class="item">Store Locator</li>
-                            <li class="item">Coupons</li>
-                            <li class="item">Product Catalog</li>
-                            <li class="item">Responsive Design (fits any screen)</li>
-                        </ul>
-                    </div>
-                    <div class="services section">
-                        <div class="heading"><i class="icon fa fa-wrench"></i> Services</div>
-                        <ul class="list">
-                            <li class="item">Update Old Design</li>
-                            <li class="item">Stock Imagery</li>
-                            <li class="item">Custom Theme</li>
-                            <li class="item">Custom Icons</li>
-                            <li class="item">Brand Repurposing (not just tires)</li>
-                            <li class="item">Item Catalog Prototype</li>
-                        </ul>
-                    </div>
-                    <div class="technologies section">
-                        <div class="heading"><i class="icon fa fa-cogs"></i> Technologies</div>
-                        <ul class="list">
-                            <li class="item"><a href="https://www.heroku.com/">Heroku</a></li>
-                            <li class="item"><a href="http://angularjs.org/">AngularJS</a></li>
-                            <li class="item"><a href="http://isotope.metafizzy.com/">Isotope</a></li>
-                            <li class="item"><a href="http://en.wikipedia.org/wiki/HTML5">HTML5</a></li>
-                            <li class="item"><a href="http://en.wikipedia.org/wiki/Cascading_Style_Sheets">CSS3</a></li>
-                            <li class="item"><a href="http://lesscss.org/">LESS</a></li>
-                            <li class="item"><a href="http://en.wikipedia.org/wiki/JavaScript">Javascript</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="services page" ng-show="menu.isSection('services')">
-            <section>
-                <h2>Web Development</h2>
-                <ul>
-                    <li>Web Applications</li>
-                    <li>Mobile Web Applications</li>
-                </ul>
-                <h2>Web Design</h2>
-                <ul>
-                    <li>Custom Website</li>
-                    <li>Branding</li>
-                    <li>Logo Design</li>
-                    <li>Stationery</li>
-                </ul>
-            </section>
-        </div>
-        <div class="about page" ng-show="menu.isSection('about')">
-
-            <h1>I'm Levi</h1>
-
-            <div class="stats">
-                <div class="chart">
-                    <div class="grid">
-                        <div class="line">
-                            <div class="label">Senior</div>
-                        </div>
-                        <div class="line">
-                            <div class="label">Intermediate</div>
-                        </div>
-                        <div class="line">
-                            <div class="label">Junior</div>
-                        </div>
-                        <div class="line">
-                            <div class="label">Fledgling</div>
-                        </div>
-                    </div>
-                    <div class="groups">
-                        <div class="group" ng-repeat="group in stats" style="width: {{ 100 / stats.length }}%">
-                            <div class="bar" style="height: {{ group.scale }}%"></div>
-                            <div class="items">
-                                <div class="item" ng-repeat="item in group.items">{{ item }}</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="labels">
-                    <div class="label" ng-repeat="group in stats" style="width: {{ 100 / stats.length }}%">{{ group.name }}</div>
-                </div>
-            </div>
-
-            <hr/>
-
-            <div class="description">
-                <h1>About</h1>
-
-                <p>
-                    I build beautiful web apps.
-                    My passion is <b>UX</b> and <b>UI</b>.
-                    I've got 2 years front-end development experience riding on a 13+ year design background.
-                    I know <b>Photoshop</b> and <b>Illustrator</b>.
-                    My toolbox is full of modern front-end web technologies like <b>HTML5</b>, <b>CSS3/LESS</b>, <b>JavaScript</b>,
-                    <b>Twitter Bootstrap</b>, <b>AngularJS</b>, <b>jQuery</b>, Firebase, Grunt, Gulp, Bower, npm, node.js, etc.
-                    I know some <b>Python</b> and <b>Django</b>, too.
-                </p>
-
-                <p>
-                    Right now I’m <b>heavily</b> into AngularJS, LESS, and Bootstrap. I write HTML5, CSS/LESS, and JavaScript
-                    everyday. I can bring any design to life on web, and thoroughly enjoy doing it.
-                    <b>Git</b>, <b>agile</b> development, feature branching, and <b>continuous deployment</b> are part of my daily routine.
-                    I have some <b>open source</b> projects and I also <b>contribute</b> to the community.
-                </p>
-            </div>
-
-            <hr/>
-
-            <div class="projects">
-                <h1>Projects</h1>
-
-                <div class="project">
-                    <div class="name">ScrapBin</div>
-                    <div class="position">Front-End Developer, Team Lead</div>
-                    <ul class="duties">
-                        <li>Architected the LESS/CSS framework</li>
-                        <li>Led UX / UI</li>
-                        <li>Wrote Angular code everyday</li>
-                        <li>Unit and e2e tested everything</li>
-                        <li>Git, feature branching, continuous deployment</li>
-                        <li><a href="https://www.scrapbin.com" target="_blank">Try it</a></li>
-                    </ul>
-                </div>
-
-                <div class="project">
-                    <div class="name">
-                        <a href="https://www.github.com/levithomason/bootstyle" target="_blank">Bootstyle</a>
-                    </div>
-                    <div class="position">Author</div>
-                    <ul class="duties">
-                        <li>Authored</li>
-                        <li>In browser Twitter Bootstrap customizer</li>
-                        <li>Setup automated build & deployment</li>
-                        <li>Setup testing suite</li>
-                        <li>Built in live reload, LESS compiling, HTML editor, client side file downloads</li>
-                        <li><a href="https://www.usebootstyle.com" target="_blank">Try it</a></li>
-                    </ul>
-                </div>
-
-                <div class="project">
-                    <div class="name">
-                        <a href="https://www.github.com/levithomason/sparrowbleu" target="_blank">Proofing Gallery</a>
-                    </div>
-                    <div class="position">Author</div>
-                    <ul class="duties">
-                        <li>Author</li>
-                        <li>Drag n’ drop uploads</li>
-                        <li>Mobile and desktop versions</li>
-                        <li>Favoriting images</li>
-                        <li>Cost calculator</li>
-                        <li>Summary emails with thumbnails</li>
-                        <li><a href="https://proofing.sparrowbleuphotography.com" target="_blank">Try it</a> (passcode: 'demo123')</li>
-                    </ul>
-                </div>
-
-                <div class="project">
-                    <div class="name">
-                        <a href="www.github.com/bgrins/tinycolor">TinyColor
-                            <small><i>by Brian Grins @ Mozilla</i></small>
-                        </a>
-                    </div>
-                    <div class="position">Contributor</div>
-                    <ul class="duties">
-                        <li>Contributed features, tests, and docs</li>
-                        <li>Engine behind chrome dev tools color picker</li>
-                        <li><a href="https://github.com/bgrins/TinyColor/issues/56">Was asked to help design apiv1</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <hr/>
-            <hr/>
-
-            <div class="content">
-
-                <h1 class="intro">I love life.  I also love a lot of things in my life.</h1>
-
-                <div class="section">
-
-                    <div class="content">
-                        <img class="image" src="img/wedding.jpg" alt=""/>
-
-                        <div class="text">
-                            <div class="title">My Anchor</div>
-                            Without this beautiful mexican I'd be much less of a person.  Aside from holding my world together she is also an amazing
-                            <a href="https://www.facebook.com/SparrowBleuPhotography">Photographer</a>.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="section">
-
-                    <div class="content">
-                        <img class="image" src="img/violet.jpg" alt=""/>
-
-                        <div class="text">
-                        <div class="title">Violet</small></div>
-                            The greatest experience in life is to make it.  We thank God for this one daily.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="section">
-
-                    <div class="content">
-                        <img class="image" src="img/koala.jpg" alt=""/>
-
-                        <div class="text">
-                            <div class="title">Koala Bear <small>(aka Violet)</small></div>
-                            This little koala bear is the greatest thing to happen to me and my wife.  We love her to pieces!
-                        </div>
-                    </div>
-                </div>
-
-                <div class="section">
-                    <div class="content">
-                        <img class="image" src="img/canon.jpg" alt=""/>
-
-                        <div class="text">
-                            <div class="title">Canon</div>
-                            Canon is a high energy <a href="http://en.wikipedia.org/wiki/Cockapoo" target="_blank">cockapoo</a>.  He and I are a great match.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="section">
-                    <div class="content">
-                        <img class="image" src="img/drums.jpg" alt=""/>
-
-                        <div class="text">
-                            <div class="title">Drums</div>
-                            Oh man, I sure do love me some good drummin'.  The constant tapping and failed attempts at beat boxing sometimes elicit a well intended 'stop that!' from family and friends... and work.  The beat goes on!
-                        </div>
-                    </div>
-                </div>
-
-                <div class="section">
-                    <div class="content">
-                        <img class="image" src="img/80s.jpg" alt=""/>
-
-                        <div class="text">
-                            <div class="title">1980's Child</div>
-                            My middle name is 'Cruz N'.  Literally.  Cause that's how cool the 80s are.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="blog page" ng-show="menu.isSection('blog')">
-            <h1>Working on it!</h1>
-        </div>
+    <div class="container">
+        <div ng-view></div>
     </div>
-</div>
 
-<!-- Java Script -->
-<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
-<script>
-    (function(i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function() {
-            (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date();
-        a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    <!-- Java Script -->
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-    ga('create', 'UA-47264104-1', 'levithomason.com');
-    ga('send', 'pageview');
+        ga('create', 'UA-47264104-1', 'levithomason.com');
+        ga('send', 'pageview');
 
-</script>
+    </script>
 </body>
 </html>

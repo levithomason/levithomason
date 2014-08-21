@@ -1,0 +1,61 @@
+#portfolio_page {
+    .project {
+        border-bottom: 2px solid #DDD;
+        & + .project {
+            padding: 40px 0;
+        }
+
+        .project_title {
+
+        }
+        .description {
+            margin: 20px 0;
+        }
+        .preview {
+            margin: 40px 0;
+            .image {
+                box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+            }
+        }
+        .info {
+            overflow: hidden;
+            color: #908d8d;
+
+            .list {
+                padding: 0;
+                margin: 0;
+                .item {
+                    float: left;
+                    list-style: none;
+                    padding: 6px 10px;
+                }
+            }
+            .section {
+                float: left;
+                width: 30%;
+                margin: 0 1.666%;
+                &.features {
+                    .list {
+                        .item {
+                            clear: both;
+                        }
+                    }
+                }
+                &.services {
+                }
+                &.technologies {
+                }
+
+                .heading {
+                    margin: 10px 0;
+                    line-height: 1.5;
+                    border-bottom: 1px solid #DDD;
+
+                    .icon {
+                        margin-right: 2px;
+                    }
+                }
+            }
+        }
+    }
+}

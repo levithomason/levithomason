@@ -1,0 +1,172 @@
+<div id="resume_page">
+
+    <div class="page_intro">The Lowdown on Levi</div>
+
+    <div class="description">
+        <p>
+            I build web apps.
+            My passion is <b>front-end development</b>.
+            I love simple <b>UX</b> and pretty <b>UI</b>.
+            I know <b>Photoshop</b> and <b>Illustrator</b>.
+            I've got 2 years immersive development experience and some phenomenal teachers.
+            My toolbox is full of modern front-end web technologies like
+            <b>AngularJS</b>,
+            <b>JavaScript</b>,
+            <b>Bootstrap</b>,
+            <b>LESS</b>,
+            <b>jQuery</b>,
+            <b>HTML5</b>,
+            <b>CSS3</b>,
+            Firebase, Grunt, Gulp, Bower, npm, node.js, etc.
+            I know some <b>Python</b> and <b>Django</b>, too.
+        </p>
+
+        <p>
+            Right now I’m <b>heavily</b> into AngularJS, LESS, and Bootstrap. I write HTML5, CSS/LESS, and JavaScript
+            every day. I can bring any design to life on the web, and thoroughly enjoy doing it.
+            <b>Git</b>, <b>agile</b> development, feature branching, and
+            <b>continuous deployment</b> are part of my daily routine.
+            I have some <b>open source</b> projects and I also <b>contribute</b> to the community.
+        </p>
+    </div>
+
+    <div class="stats">
+        <b><i class="fa fa-"></i> Skills</b>
+        <div class="chart">
+            <div class="grid">
+                <div class="line">
+                    <div class="label">Senior</div>
+                </div>
+                <div class="line">
+                    <div class="label">Intermediate</div>
+                </div>
+                <div class="line">
+                    <div class="label">Junior</div>
+                </div>
+                <div class="line">
+                    <div class="label">Fledgling</div>
+                </div>
+            </div>
+            <div class="groups">
+                <div class="group" ng-repeat="group in stats" style="width: {{ 100 / stats.length }}%">
+                    <div class="bar" style="height: {{ group.scale }}%"></div>
+                </div>
+            </div>
+        </div>
+        <div class="labels">
+            <div class="label" ng-repeat="group in stats" style="width: {{ 100 / stats.length }}%">{{ group.name }}</div>
+        </div>
+    </div>
+
+    <hr/>
+
+    <div class="projects">
+        <h1>Projects</h1>
+
+        <div class="project">
+            <div class="name">
+                <i class="fa fa-github"></i>
+                ScrapBin <i><small>Private repo</small></i>
+            </div>
+            <div class="position">Front-End Developer, Team Lead</div>
+            <ul class="duties">
+                <li>Architected the LESS/CSS framework</li>
+                <li>Led UX / UI</li>
+                <li>Wrote Angular code every day</li>
+                <li>Unit and e2e tested everything</li>
+                <li>Git, feature branching, continuous deployment</li>
+                <li>
+                    <a href="https://www.scrapbin.com" target="_blank">
+                        <i class="icon fa fa-rocket"></i>
+                        <span class="text">Launch</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="project">
+            <div class="name">
+                <a href="https://www.github.com/levithomason/bootstyle" target="_blank">
+                    <i class="fa fa-github"></i>
+                    Bootstyle
+                </a>
+            </div>
+            <div class="position">Author</div>
+            <ul class="duties">
+                <li>Authored</li>
+                <li>In browser Twitter Bootstrap customizer</li>
+                <li>Setup automated build & deployment</li>
+                <li>Setup testing suite</li>
+                <li>Built in live reload, LESS compiling, HTML editor, client side file downloads</li>
+                <li>
+                    <a href="http://www.usebootstyle.com" target="_blank">
+                        <i class="fa fa-rocket"></i>
+                        Launch
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="project">
+            <div class="name">
+                <a href="https://www.github.com/levithomason/sparrowbleu" target="_blank">
+                    <i class="fa fa-github"></i>
+                    Proofing Gallery
+                </a>
+            </div>
+            <div class="position">Author</div>
+            <ul class="duties">
+                <li>Author</li>
+                <li>Drag n’ drop uploads</li>
+                <li>Mobile and desktop versions</li>
+                <li>Favoriting images</li>
+                <li>Cost calculator</li>
+                <li>Summary emails with thumbnails</li>
+                <li>
+                    <a href="http://proofing.sparrowbleuphotography.com" target="_blank">
+                        <i class="fa fa-rocket"></i>
+                        Launch
+                    </a> (passcode 'demo123')
+                </li>
+            </ul>
+        </div>
+
+        <div class="project">
+            <div class="name">
+                <a href="https://www.github.com/bgrins/tinycolor" target="_blank">
+                    <i class="fa fa-github"></i>
+                    TinyColor
+                </a>
+                <small><i>by Brian Grins @ Mozilla</i></small>
+            </div>
+            <div class="position">Contributor</div>
+            <ul class="duties">
+                <li>Contributed features, tests, and docs</li>
+                <li>Engine behind chrome dev tools color picker</li>
+                <li>Used in Bootstyle</li>
+                <li>
+                    Was invited to help
+                    <a href="https://github.com/bgrins/TinyColor/issues/56/#issuecomment-46633483" target="_blank">
+                        design and test apiv1
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <hr/>
+
+    <div class="looking_for">
+        <h1>I'm Available</h1>
+        <p>
+            I'm looking for a full time position writing AngularJS.
+            Companies who promote individual growth are very attractive.
+            If you you're looking for quick learner with mad skills, contact me!
+        </p>
+        <p>
+            <b>Levi Thomason</b> <br/>
+            (208) 699-4042 <br/>
+            <a href="mailto:me@levithomason.com">me@levithomason.com</a>
+        </p>
+    </div>
+</div>

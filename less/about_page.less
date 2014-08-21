@@ -1,0 +1,65 @@
+#about_page {
+
+    .section {
+        margin-bottom: 80px;
+        overflow: hidden;
+        background: lighten(@lt-background-color, 5%);
+
+        &:nth-child(odd) {
+            text-align: right;
+
+            .image {
+                float: right;
+            }
+            .text {
+                float: right;
+                margin-right: 5%;
+                margin-left: 0;
+            }
+        }
+
+        .title {
+            font-size: 32px;
+            font-weight: 100;
+            color: @lt-red;
+            margin: 20px 0 10px 0;
+
+        }
+        .image {
+            display: inline-block;
+            width: 20%;
+            vertical-align: top;
+            float: left;
+        }
+        .text {
+            float: left;
+            margin-left: 5%;
+            margin-bottom: 20px;
+            width: 75%;
+            color: @lt-dim-gray;
+            font-size: 21px;
+        }
+        
+        @media (max-width: 1024px) {
+            .image {
+                width: 30%;
+            }
+            .text {
+                width: 65%;
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            box-shadow: 0 1px 2px #CCC;
+            margin-bottom: 40px;
+
+            .image {
+                width: 100%;
+            }
+            .text {
+                width: 90%;
+            }
+        }
+    }
+}
