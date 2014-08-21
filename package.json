@@ -1,37 +1,37 @@
 {
-    "name": "levithomason.github.io",
-    "version": "0.0.0",
-    "description": "Levi Thomason's Personal Site",
-    "main": "index.html",
-    "scripts": {
-        "postinstall": "",
-        "start": "gulp connect-prod",
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/levithomason/levithomason.github.io.git"
-    },
-    "keywords": [
-        "Angular",
-        "AngularJS",
-        "Developer",
-        "Designer",
-        "Web",
-        "App",
-        "Bootstrap",
-        "LESS"
-    ],
-    "author": "Levi Thomason",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/levithomason/levithomason.github.io/issues"
-    },
-    "homepage": "https://github.com/levithomason/levithomason.github.io",
-    "dependencies": {
-        "gulp": "~3.8.7",
-        "gulp-webserver": "~0.6.0",
-        "gulp-less": "~1.3.5",
-        "path": "~0.4.9"
-    }
+  "name": "levithomason.github.io",
+  "version": "0.0.0",
+  "description": "Levi Thomason's Personal Site",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/levithomason/levithomason.github.io.git"
+  },
+  "keywords": [
+    "Angular",
+    "AngularJS",
+    "Developer",
+    "Designer",
+    "Web",
+    "App",
+    "Bootstrap",
+    "LESS"
+  ],
+  "author": "Levi Thomason",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/levithomason/levithomason.github.io/issues"
+  },
+  "homepage": "https://github.com/levithomason/levithomason.github.io",
+  "dependencies": {
+    "gulp": "~3.8.7",
+    "gulp-webserver": "~0.6.0",
+    "gulp-less": "~1.3.5",
+    "path": "~0.4.9",
+    "logfmt": "~1.1.2",
+    "express": "~4.8.5"
+  }
 }

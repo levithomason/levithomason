@@ -1,1 +1,1 @@
-web: gulp connect-prod
+web: node web.js

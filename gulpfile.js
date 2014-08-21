@@ -21,6 +21,8 @@ gulp.task('watch', function() {
 gulp.task('connect-dev', function() {
     gulp.src('app')
         .pipe(webserver({
+            root: ['.'],
+            port: 80,
             livereload: true
         }));
 });
@@ -28,8 +30,9 @@ gulp.task('connect-dev', function() {
 gulp.task('connect-prod', function() {
     gulp.src('app')
         .pipe(webserver({
+            root: ['.'],
             port: 80,
-            fallback: 'app/index.html'
+            fallback: 'index.html'
         }));
 });
 
