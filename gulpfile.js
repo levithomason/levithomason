@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var less = require('gulp-less');
 var path = require('path');
+var webserver = require('gulp-webserver');
 
 var paths = {
     less: './less/',
@@ -15,6 +16,22 @@ gulp.task('less', function() {
 
 gulp.task('watch', function() {
     gulp.watch(paths.less + '**/*.less', ['less']);
+});
+
+gulp.task('connect-dev', function() {
+    return gulp.src('build')
+        .pipe(webserver({
+            root: ['.'],
+            livereload: true
+        }));
+});
+
+gulp.task('connect-prod', function() {
+    return gulp.src('build')
+        .pipe(webserver({
+            port: 80,
+            fallback: 'index.html'
+        }));
 });
 
 gulp.task('default', ['less', 'watch']);
