@@ -4,8 +4,8 @@ var path = require('path');
 var webserver = require('gulp-webserver');
 
 var paths = {
-    less: './less/',
-    css: './css/',
+    less: 'app/less/',
+    css: 'app/css/',
 };
 
 gulp.task('less', function() {
@@ -19,18 +19,17 @@ gulp.task('watch', function() {
 });
 
 gulp.task('connect-dev', function() {
-    return gulp.src('build')
+    gulp.src('app')
         .pipe(webserver({
-            root: ['.'],
             livereload: true
         }));
 });
 
 gulp.task('connect-prod', function() {
-    return gulp.src('build')
+    gulp.src('app')
         .pipe(webserver({
             port: 80,
-            fallback: 'index.html'
+            fallback: 'app/index.html'
         }));
 });
 
