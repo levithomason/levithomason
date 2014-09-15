@@ -18,20 +18,12 @@ gulp.task('watch', function() {
     gulp.watch(paths.less + '**/*.less', ['less']);
 });
 
-gulp.task('connect-dev', function() {
+gulp.task('serve', function() {
     gulp.src('app')
         .pipe(webserver({
             root: ['.'],
             port: 80,
-            livereload: true
-        }));
-});
-
-gulp.task('connect-prod', function() {
-    gulp.src('app')
-        .pipe(webserver({
-            root: ['.'],
-            port: 80,
+            livereload: true,
             fallback: 'index.html'
         }));
 });

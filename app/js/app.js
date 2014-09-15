@@ -28,5 +28,5 @@ ltApp.
                 redirectTo: '/'
             });
 
-//        $locationProvider.html5Mode(true);
+        $locationProvider.html5Mode(true).hashPrefix('!');
     });
