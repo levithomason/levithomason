@@ -1,0 +1,36 @@
+@media print {
+    a {
+        color: @lt-red !important;
+
+        &[href]:after {
+            content: none;
+        }
+
+        * {
+        color: @lt-red !important;
+        }
+    }
+
+    hr {
+        page-break-after: always;
+        visibility: hidden;
+    }
+
+    #resume_page {
+
+        .stats {
+            .bar {
+                background-color: #AAA !important;
+                border: 4px solid #AAA;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+            }
+        }
+
+        .project {
+            float: left;
+            width: 50%;
+        }
+    }
+}
