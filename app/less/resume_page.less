@@ -112,6 +112,44 @@
             }
         }
     }
+
+    .recommendations {
+
+        .recommendation {
+            position: relative;
+            margin: 40px 0 60px 0;
+            overflow: hidden;
+            min-height: 152px;
+
+            .info {
+                position: absolute;
+                width: 160px;
+                top: 0;
+                left: 0;
+                text-align: center;
+
+                .name {
+                    font-weight: 100;
+                }
+            }
+
+            .quote {
+                margin-left: 160px;
+
+                p {
+                    &:first-child {
+                        margin-top: 0;
+                    }
+                }
+            }
+
+            i {
+                font-size: 2em;
+                color: mix(@lt-font-color, @lt-background-color, 10);
+            }
+        }
+    }
+
     .looking_for {
         padding-bottom: 100px;
     }

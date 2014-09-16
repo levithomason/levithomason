@@ -3,8 +3,6 @@
  *******************************************************/
 
 .box-sizing(@arg) {
-    -webkit-box-sizing: @arg;
-    -moz-box-sizing: @arg;
     box-sizing: @arg;
 }
 
@@ -17,17 +15,24 @@
 .text-overlay(@bg) when (lightness(@bg) >= 50%) {
     color: hsl(hue(@bg), 12%, lightness(@bg) * (1 - @overlay_contrast * 0.75));
 }
+
 .text-overlay(@bg) when (lightness(@bg) < 50%) {
     color: hsl(hue(@bg), 15%, ((100% - lightness(@bg)) * @overlay_contrast) + (lightness(@bg)));
 }
+
 .user-select-none() {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
     user-select: none;
+}
+
+.text-stroke(@color, @width: 1px) {
+    text-shadow:
+        @width 0 @color,
+        -@width 0 @color,
+        0 @width @color,
+        0  -@width @color;
 }
 
 /********************************************************
@@ -42,18 +47,11 @@
 @timing-function: cubic-bezier(0.25, 0.75, 0.5, 1);
 
 .transition-properties(@properties...) {
-    -webkit-transition-property: @properties !important;
-    -o-transition-property: @properties !important;
     transition-property: @properties !important;
-
-    -webkit-transition-timing-function: @timing-function;
-    -o-transition-timing-function: @timing-function;
     transition-timing-function: @timing-function;
 }
 
 .transition-duration(@duration: @transition-duration-medium;) {
-    -webkit-transition-duration: @duration;
-    -o-transition-duration: @duration;
     transition-duration: @duration;
 }
 
@@ -80,18 +78,4 @@
 .transition-extra-slow(@properties...) {
     .transition-duration(@transition-duration-extra-slow);
     .transition-properties(@properties);
-}
-
-/********************************************************
- * Transitions
- *******************************************************/
-
-.content-animate(@motion) {
-    @perspective: 1200px;
-
-    -webkit-transform: perspective(@perspective) translate3d(0, -100px * @motion, 200px * @motion) rotateX(10deg * @motion);
-    -moz-transform: perspective(@perspective) translate3d(0, -100px * @motion, 200px * @motion) rotateX(10deg * @motion);
-    -ms-transform: perspective(@perspective) translate3d(0, -100px * @motion, 200px * @motion) rotateX(10deg * @motion);
-    -o-transform: perspective(@perspective) translate3d(0, -100px * @motion, 200px * @motion) rotateX(10deg * @motion);
-    transform: perspective(@perspective) translate3d(0, -100px * @motion, 200px * @motion) rotateX(10deg * @motion);
 }

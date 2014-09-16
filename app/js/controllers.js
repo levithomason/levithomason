@@ -5,6 +5,10 @@ ltAppControllers.
 
     }]).
 
+    controller('ContactController', ['$scope', function($scope) {
+
+    }]).
+
     controller('PortfolioController', ['$scope', function($scope) {
 
     }]).
@@ -34,6 +38,6 @@ ltAppControllers.
         ];
     }]).
 
-    controller('MainController', ['$scope', function($scope) {
+    controller('HomeController', ['$scope', function($scope) {
 
     }]);

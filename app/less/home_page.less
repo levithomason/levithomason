@@ -1,61 +1,52 @@
 #home_page {
     position: absolute;
-    display: inline-table;
     margin: auto;
     top: 60px;
     left: 0;
-    bottom: 20%;
+    bottom: 0;
     right: 0;
-    width: 100%;
     text-align: center;
 
-    .image {
-        margin-top: 0;
-        width: @lt-logo-max-width;
-    }
+    .content_container {
+        position: absolute;
+        margin: auto;
+        width: 160px;
+        height: 260px;
+        top: 20%;
+        left: 0;
+        right: 0;
+        border: none;
 
-    .text {
-        font-size: 21px;
-        margin-top: 20px;
-        margin-bottom: 100px;
-        text-transform: uppercase;
-        color: @lt-red;
-        overflow: hidden;
+        @media (max-height: 500px) {
+            top: 5%;
+        };
 
-        .name {
-            font-weight: 700;
+        .image {
+            max-width: @lt-logo-max-width;
         }
 
-        .title {
-            color: @lt-dim-gray;
-            letter-spacing: 1px;
-            font-weight: 100;
-            margin-top: 2px;
-        }
-    }
-    .social {
-        margin: 40px 0;
+        .text {
+            font-size: 21px;
+            text-transform: uppercase;
+            color: @lt-red;
+            overflow: hidden;
 
-        .site {
-            display: inline-block;
-            margin: 20px 40px;
-            line-height: 1;
-            &:hover {
-                .icon,
-                .link {
-                    color: @lt-font-color;
-                }
+            .name {
+                font-weight: 700;
+                position: absolute;
+                bottom: 31px;
+                left: 0;
+                right: 0;
             }
 
-            .icon {
-                font-size: 28px;
-                color: mix(@lt-font-color, @lt-background-color, 85);
-            }
-
-            .link {
-                font-size: 12px;
-                color: mix(@lt-font-color, @lt-background-color, 60);
-                border: none;
+            .title {
+                color: @lt-dim-gray;
+                letter-spacing: 1px;
+                font-weight: 100;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
             }
         }
     }

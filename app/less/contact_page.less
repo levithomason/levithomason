@@ -1,0 +1,63 @@
+#contact_page {
+    text-align: center;
+
+    .contact_method {
+        margin-bottom: 100px;
+        font-size: 24px;
+
+        &.phone,
+        &.email {
+            font-weight: 100;
+        }
+
+        .method_icon {
+            margin-bottom: 10px;
+            font-size: 42px;
+            color: @lt-font-color;
+        }
+    }
+
+    .social {
+        display: inline-block;
+
+        .link {
+            position: relative;
+            display: inline-block;
+            margin: 0 10px;
+            width: 90px;
+            height: 90px;
+            overflow: hidden;
+            border: none;
+            .transition-slow(background, color;);
+            &:hover {
+                background: @lt-red;
+                .icon {
+                    line-height: 80px;
+                }
+
+                .text {
+                    bottom: 8px;
+                    color: @lt-background-color;
+                }
+            }
+
+            .text {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                font-size: 12px;
+                color: @lt-red;
+                .transition-medium(bottom;);
+            }
+
+            .icon {
+                font-size: 28px;
+                line-height: 90px;
+                .text-stroke(@lt-red);
+                color: @lt-background-color;
+                .transition-medium(line-height;);
+            }
+        }
+    }
+}

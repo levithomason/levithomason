@@ -1,5 +1,7 @@
 var gulp = require('gulp');
 var less = require('gulp-less');
+var minifyCSS = require('gulp-minify-css');
+var autoprefixer = require('gulp-autoprefixer');
 var path = require('path');
 var webserver = require('gulp-webserver');
 
@@ -11,6 +13,8 @@ var paths = {
 gulp.task('less', function() {
     gulp.src(paths.less + 'lt-main.less')
         .pipe(less())
+        .pipe(autoprefixer())
+        .pipe(minifyCSS())
         .pipe(gulp.dest(paths.css));
 });
 
