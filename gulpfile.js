@@ -22,7 +22,7 @@ gulp.task('serve', function() {
     gulp.src('app')
         .pipe(webserver({
             root: ['.'],
-            port: 80,
+            port: 8000,
             livereload: true,
             fallback: 'index.html'
         }));

@@ -217,7 +217,6 @@ a:active {
   margin: 0;
 }
 #portfolio_page .project .info .list .item {
-  float: left;
   list-style: none;
   padding: 6px 10px;
 }
@@ -226,8 +225,8 @@ a:active {
   width: 30%;
   margin: 0 1.666%;
 }
-#portfolio_page .project .info .section.features .list .item {
-  clear: both;
+#portfolio_page .project .info .section.technologies .list .item {
+  float: left;
 }
 #portfolio_page .project .info .section .heading {
   margin: 10px 0;
