@@ -123,18 +123,23 @@
 
             .info {
                 position: absolute;
-                width: 160px;
+                width: 180px;
                 top: 0;
                 left: 0;
                 text-align: center;
 
-                .name {
-                    font-weight: 100;
+                a {
+                    border: none;
                 }
             }
 
             .quote {
-                margin-left: 160px;
+                margin-left: 180px;
+                text-align: justify;
+
+                i {
+                    margin: 0 5px 0 0;
+                }
 
                 p {
                     &:first-child {
@@ -146,6 +151,18 @@
             i {
                 font-size: 2em;
                 color: mix(@lt-font-color, @lt-background-color, 10);
+            }
+
+            @media (max-width: 768px) {
+                .info {
+                    position: static;
+                    display: block;
+                    width: 100%;
+                }
+
+                .quote {
+                    margin-left: 0;
+                }
             }
         }
     }
